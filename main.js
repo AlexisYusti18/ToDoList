@@ -2,9 +2,8 @@ const input = document.querySelector('input');
 const addNote = document.querySelector('.addNote-btn');
 const ul = document.querySelector('ul');
 const searchInput = document.querySelector('#searchInput');
-const filterCompletedCheckbox = document.querySelector('#filterCompleted');
+const completedCheckbox = document.querySelector('#completedCheckbox')
 
-// Cargar notas desde localStorage al cargar la página
 document.addEventListener('DOMContentLoaded', () => {
     const notes = JSON.parse(localStorage.getItem('notes')) || [];
     notes.forEach(note => {
@@ -12,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Función para agregar una nota al DOM y al localStorage
 function addNoteToDOM(text, completed = false) {
     const p = document.createElement('p');
     const listItem = document.createElement('li');
@@ -41,7 +39,7 @@ addNote.addEventListener('click', (e) => {
 
 function addDelete() {
     const deleteBtn = document.createElement('button');
-    deleteBtn.textContent = 'X';
+    deleteBtn.textContent = 'Eliminar';
     deleteBtn.className = 'btn-delete';
     deleteBtn.addEventListener('click', (e) => {
         const item = e.target.parentElement;
@@ -69,7 +67,7 @@ function filterNotes() {
         const text = note.querySelector('p').textContent.toLowerCase();
         const isCompleted = note.querySelector('input[type="checkbox"]').checked;
 
-        if ((!filterCompletedCheckbox.checked || isCompleted) && text.includes(searchText)) {
+        if ((!completedCheckbox.checked || isCompleted) && text.includes(searchText)) {
             note.style.display = 'block';
         } else {
             note.style.display = 'none';
@@ -78,4 +76,4 @@ function filterNotes() {
 }
 
 searchInput.addEventListener('input', filterNotes);
-filterCompletedCheckbox.addEventListener('change', filterNotes);
+completedCheckbox.addEventListener('change', filterNotes);

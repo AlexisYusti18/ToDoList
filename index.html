@@ -8,26 +8,28 @@
 </head>
 <body>
     <header>
-        <h1>TO DO LIST</h1>
+        <h1>Organiza Tus Tareas📝</h1>
     </header>
     <main>
             <div class="form-ctn">
                 <div>
                     <form>
                         <input type="text" placeholder="Crear Nueva Nota" name="" id="">
-                        <button class="addNote-btn">+</button>
+                        <button class="addNote-btn">Agregar</button>
                     </form>
-                    <input type="text" id="searchInput">
-                    <!-- <label for="filterCompleted">Mostrar solo completadas</label> -->
+                    <input placeholder="Buscar Una Nota" type="text" id="searchInput">
                 </div>
-                <input type="checkbox" id="filterCompleted" />
+                <div class="checkbox-ctn">
+                    <spam>Mostrar Notas Completas</spam>
+                    <input class="checkbox" type="checkbox" id="completedCheckbox" />
+                </div>
             </div>
             <div class="ul-ctn">
                 <ul></ul>
             </div>
     </main>
-    <footer>
-
+    <footer>    
+        <h4>Copyright © 2024 All Rights Reserved by Alexis</h4>
     </footer>
     <script src="/main.js"></script>
 </body>

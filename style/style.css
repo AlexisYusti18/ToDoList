@@ -28,7 +28,7 @@ main{
 }
 
 .form-ctn{
-    background-color: #fff;
+    /* background-color: #fff; */
     height: 30vh;
 }
 
@@ -46,6 +46,21 @@ input{
     background-color: green;
     border: none;
 }
+.checkbox-ctn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: red; */
+    
+}
+li{
+    list-style: none;
+}
+spam{
+    color: #fff;
+    font-weight: 900;
+}
 .ul-ctn{
     min-height: 50vh;
 }
@@ -58,18 +73,66 @@ p{
     color: black;
     padding: 15px 15px;
     margin: 5px 5px;
-    border: 1px solid black;
+    border: none;
     background-color: #fff;
     width: 10vw;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 .btn-delete{
     color: #fff;
-    background-color: red;
     border: none;
+    cursor: pointer;
+    padding: 4px 4px;
+    text-align: center;
+    border: 1px solid #cc0000;
+    background-color: #e50000;
+    overflow: hidden;
 }
 
 
 footer{
     background-color: #7077A1;
-    min-height: 10vh;
+    min-height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
 }
+
+.checkbox {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+    appearance: none;
+    background-color: #bbb;
+    transition: all .3s;
+   }
+   
+   .checkbox::before {
+    content: '';
+    position: absolute;
+    border: solid #fff;
+    display: block;
+    width: .3em;
+    height: .6em;
+    border-width: 0 .2em .2em 0;
+    z-index: 1;
+    opacity: 0;
+    right: calc(50% - .3em);
+    top: calc(50% - .6em);
+    transform: rotate(0deg);
+    transition: all .3s;
+    transform-origin: center center;
+   }
+   
+   .checkbox:checked {
+    animation: a .3s ease-in forwards;
+    background-color: rgb(120, 190, 120);
+   }
+   
+   .checkbox:checked::before {
+    opacity: 1;
+    transform: rotate(405deg);
+   }
+   
